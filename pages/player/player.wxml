@@ -1,0 +1,70 @@
+<!--pages/player/player.wxml-->
+<view class='playerHeader'>
+  <view class='leftMusicMsg'>
+    <text class='musicName'>{{ musicMsg.name }}</text>
+    <text class='musicAuthor'>{{ musicMsg.author }}</text>
+  </view>
+  <!-- <view class='share icon iconfont icon-xingzhuang'></view> -->
+  <!-- <navigator
+    url="/pages/home/home"
+    open-type="navigate"
+  >
+    返回
+  </navigator> -->
+</view>
+<!-- bindlongtap ='noScroll' bindtouchend='goScroll' -->
+<view class='centerBox'>
+  <!-- 背景处理 -->
+  <view class='cneterBg'></view>
+  <view class='bgBlur'  style='background:url( {{  musicMsg.img }} ) no-repeat;'></view>
+  <!-- 中间旋转的盒子 -->
+  <view class='centerLogoBox' wx:if="{{ !goLyrics }}" bindtap='goToLyrics'>
+    <view class='centerLogo {{ isPlay? "playing":"playing paused" }}'>
+      <image src='{{ musicMsg.img }}'></image>
+    </view>
+  </view>
+  <view class='lyrics' wx:else >
+    <scroll-view class='moveBox' scroll-y  scroll-top="{{ scorllTopNum }}" scroll-with-animation  bindscroll="moveBox"  bindtap='backYuan'>
+      <view class='p {{ currentTime >= item[0] && currentTime < lyricsArr[index + 1][0] || index == lyricsArr.length - 1   ? "act":"" }}' id="to{{item[0]}}" wx:for="{{ lyricsArr }}" wx:key="index">{{ item[1] }}</view>
+    </scroll-view>
+  </view>
+</view>
+<!-- 播放列表 -->
+<view class='playListBox' catchtap='closeSongList' hidden="{{ goSongList }}">
+  <view class='songItemBox' style='bottom:{{ goBottom }};'>
+    <view class='songItem {{ currentMusic == index ? "cur" : "" }}' wx:for="{{ songList }}" wx:key="index">
+      <view class='songMsg'>{{ item.name +"-"+item.author }}</view>
+      <view class='playListBtn icon iconfont {{ currentMusic == index && isPlay ? "icon-zanting-yuanshijituantubiao" : "icon-play" }}'  catchtap='playThisMusic'  data-index="{{ index }}" ></view>
+    </view>
+  </view>
+</view>
+
+<!-- 播放控制器 -->
+<view class='player'>
+  <view class='processBox'>
+    <text class='beginTime'>{{ beginTime }}</text>
+    <view class='progress'>
+      <slider step="1" value='{{ currentTime }}'
+        bindchange="audioTo"
+        bindchanging="tuoDong"
+        block-color="#fff"
+        block-size='4'
+        activeColor="#ccc"
+        min='0'
+        max="{{ muiscTime }}"
+       />
+    </view>
+    <text class='endTime'>{{ endTime }}</text>
+  </view>
+  <view class='playerControl'>
+    <view class="playModle" class='icon iconfont {{ playModleClass[playModle] }}' bindtap='changeModle'></view>
+    <view bindtap="audioPre" class='icon iconfont icon-pre'></view>
+    <view bindtap="audioPlay" wx:if="{{ !isPlay }}"   class='iconfont icon-bofang1'></view>
+    <view bindtap="audioPause" wx:else  class='iconfont icon-zanting'></view>
+    <view bindtap="audioNext" class='icon iconfont icon-xiayigexiayiqu'></view>
+    <view class='playList icon iconfont icon-liebiao1 ' catchtap='showSongList'>
+      <text class='songListNum'>{{ songList.length }}</text>
+    </view>
+  </view>
+  <audio src="{{musicMsg.src}}" id="myAudio" controls bindended="playEnd" bindtimeupdate="playing" hidden='true'></audio>
+</view>

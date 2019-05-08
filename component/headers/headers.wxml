@@ -1,0 +1,30 @@
+<!--component/headers/headers.wxml-->
+<view class='header'>
+   <icon type='download' size='27' color='#ccc' catchtap='hiden' data-id='1'></icon>
+  <view class='headerList'>
+    <text class="{{color==index? 'active':''}}" wx:for='{{headerList}}' wx:key="index"      bindtap='colorBtn' data-index ="{{index}}">{{item.name}}</text>
+   
+  </view>
+  <icon type='search' size='22'></icon>
+  <!-- 左侧列表 -->
+  <view class='personal-center' catchtap='hiden' style='width:{{height}}'  data-id='0'> 
+    <view class='top' >
+      <navigator url="../logs/logs" class='userImg'> <image></image>  </navigator>
+      <view class='userMsg'>
+        <view class='left'>
+          <view>长夜漫漫180820</view>
+          <view class='vip'>VIp</view>
+          <view class='grade'>LV.6</view>
+        </view>
+        <view class='right'>
+          <text>i</text>
+          <text>签到</text>
+        </view>
+      </view>
+    </view>
+  </view>
+ <!-- ------ -->
+ 
+</view>
+
+

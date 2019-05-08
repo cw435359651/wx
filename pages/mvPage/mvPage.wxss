@@ -1,0 +1,325 @@
+/* pages/mvPage/mvPage.wxss */
+
+page{
+  padding-bottom: 46px; 
+  margin-top:  442rpx;
+}
+#myVideo{
+  width:100%;
+  border-bottom: 1px solid #ccc; 
+  height: 424rpx;
+  position: fixed;
+  z-index: 99;
+  top: 0;
+  left: 0;
+}
+/* mv详细信息的盒子 */
+.mvMsgBox{
+  width: 100%;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+}
+.mvTitle{
+  display: flex;
+  position: relative;
+  height: 24px;
+  line-height: 24px;
+}
+.isGood{
+  font-size: 12px;
+  color: #FC3B39;
+  display: block;
+  border: 1px solid #FC3B39;
+  height: 16px;
+  line-height: 16px;
+  padding:0 4px;
+  margin-top: 2px; 
+  margin-right: 8px; 
+  border-radius: 2px; 
+}
+.title{
+  flex: 1;
+  font-size: 16px;
+  font-weight: bold;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  line-height: 24px;
+  padding-right: 10px; 
+  color: #333;
+}
+.showMore{
+  display: block;
+  width: 16px;
+  height: 16px;
+  background: #ccc;
+  margin-top: 2px; 
+}
+.msgBox{
+  /* height: 24px; */
+  line-height: 24px;
+  margin-top: 10px;
+  overflow: hidden;
+}
+.tipsBox{
+  overflow: hidden
+}
+.plays{
+  height: 24px;
+  font-size: 14px;
+  color: #666; 
+  float: left;
+}
+.tips{
+  padding: 0 10px;
+  display: block;
+  float: left;
+  font-size: 12px;
+  color: #333;
+  background: #e6e6e6;
+  border-radius: 24px; 
+  margin: 0 6px;
+  margin-bottom: 8px; 
+}
+.moreMsgBox{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.msg{
+  height: 24px;
+  line-height: 24px;
+  font-size: 14px;
+  color: #333; 
+}
+.iconBox{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px; 
+}
+.iconItem{
+  text-align: center;
+}
+.icon{
+  display: inline-block;
+  width: 60rpx;
+  height: 60rpx;
+  background: #ccc;
+  border-radius: 100%; 
+}
+.txt{
+  display: block;
+  font-size:10px;
+  color: #333; 
+}
+
+.userMsgBox{
+  border-top: 1px solid #ccc;
+  margin-top: 20px;  
+  padding: 8px 10px;
+  display: flex;
+  justify-content: space-between;
+}
+.userFixed{
+  position: fixed;
+  top: 380rpx;
+  z-index: 98;
+  left: 0;
+  border: 0;
+  width: 100%;
+  background: #fff;
+  box-sizing: border-box;
+}
+.emptyMsgBox{
+  height: 60px;
+}
+.imgbox{
+  height: 80rpx;
+  width: 80rpx;
+  border-radius: 100%;
+  position: relative;
+  background: #ccc;
+}
+.imgbox image{
+  height: 100%;
+  width: 100%;
+  border-radius: 100%;
+}
+.guanBox{
+  height: 26px;
+  line-height: 26px;
+  background: #FC3B39;
+  color: #fff;
+  padding: 0 10px;
+  border-radius: 30px;
+  display: flex;
+  font-size: 14px; 
+  align-self: center;
+}
+.username{
+  flex: 1;
+  text-align: left;
+  padding-left: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+  display: block;
+  align-self: center;
+}
+.guanIcon{
+  width: 20px;
+  height: 26px;
+  
+}
+
+
+.moreMvBox{
+  border-top: 5px solid #e6e6e6;
+  padding: 0 10px;  
+  display: flex;
+  flex-direction: column;
+}
+.moreTitle{
+  margin-top: 10px; 
+  height: 24px;
+  line-height: 24px;
+  font-size: 14px;
+  color: #333;
+  font-weight: bold;
+}
+
+.moreMvList{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.moreMvItem{
+  height: 160rpx;
+  margin: 5px 0;
+  display: flex;
+  /* flex-direction: column; */
+}
+.mvBg{
+  width: 260rpx;
+  height: 100%;
+  background: #66ccff;
+  border-radius: 8px;
+  display: block; 
+}
+.rightMsg{
+  overflow: hidden;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 0 10px;
+}
+.submvTitle{
+  width: 100%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  color: #333;
+  font-size: 18px; 
+}
+.authorBox{
+  display: flex;
+  font-size: 14px;
+  color: #666;
+}
+.time{
+  margin-right: 10px 
+}
+.pingBox{
+  display: flex;
+  flex-direction: column;
+   border-top: 5px solid #e6e6e6;
+    padding: 0 10px;  
+}
+.noPing{
+  text-align: center;
+  font-size: 14px;
+  color: #666;
+  padding: 20px 0; 
+}
+.pingList,.pingBox,.rightUserMsg{
+  display: flex;
+  flex-direction: column;
+}
+.pingListBox{
+ margin: 5px 0; 
+ padding-bottom: 5px; 
+ border-bottom: 1rpx solid rgb(226, 226, 226); 
+}
+.pingUserBox{
+  display: flex;
+}
+.rightUserMsg{
+  justify-content: space-around;
+  margin-left: 10px;
+  flex: 1; 
+}
+.pingUsername{
+  font-size: 14px;
+  color: #666;
+}
+.pingDate{
+  font-size: 12px;
+  color: #ccc;
+}
+.pingZhanBox{
+  display: flex;
+  align-content: center;
+}
+.pingZhan{
+  color: #666;
+  font-size: 12px; 
+  margin-right: 5px;
+  height: 60rpx;
+  line-height: 60rpx;
+}
+.pingMsgBox{
+  margin-top: 6px; 
+  padding-left: 100rpx;
+  display: flex;
+  color: #333;
+  font-size: 14px;
+  overflow: hidden;
+}
+.huifu{
+  padding-left: 100rpx;
+  color: #66ccff;
+  font-size: 14px;
+  margin-top: 6px; 
+}
+
+.ingputBox{
+  height: 45px;
+  position: fixed;
+  border-top: 1rpx solid #ccc;
+  z-index: 100;
+  bottom: 0;
+  background: #fff;
+  display: flex;
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  font-size: 16px;
+  color: #333;
+  justify-content: space-between;
+}
+.inputTxt{
+  flex: 1;
+}
+.inputBtn{
+  width: 24px;
+  height: 24px;
+  background: #ccc;
+  margin-left: 10px; 
+}
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}

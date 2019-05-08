@@ -1,0 +1,85 @@
+/* pages/home-songList/songList.wxss */
+view{
+  box-sizing: border-box;
+
+}
+page{
+  height: 100%;
+  padding-top: 35px; 
+  box-sizing: border-box;
+}
+/* 清楚滚动条 */
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+#songList{
+  width: 100%;
+  background: #fff;
+  height: 100%;
+}
+.titleBox{
+   width: 100%;
+  /* background: #fff; */
+   overflow-x:auto;
+    position: fixed;
+     background: #fff;
+     z-index: 9;
+     top: 0;
+     left: 0;
+  padding: 0 10px;
+
+}
+.title{
+  width:140%;
+  /* display: flex; */
+  border-bottom: 1px solid #ccc;
+  height: 35px;
+  line-height: 35px;
+  
+  text-align: center;
+}
+
+.title view{
+  width: 14%;
+  float: left;
+  /* padding: 0 27px; */
+  height: 35px;
+  line-height: 35px;
+  text-align: center;
+  font-size: 14px;
+  color: #9A9A9A;
+
+  /* background: pink; */
+}
+#songList .title .active{
+  color: red;
+  border-bottom: 1px solid red;
+}
+/* 内容列表 */
+.contentBox{
+  width: 100%;
+   display: flex;
+  padding: 10px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.content{
+ width:226rpx;
+  margin-bottom: 10px;
+}
+.content image{
+width: 100%;
+  height: 100px;
+  background: pink;
+
+}
+.content text{
+    display:block;
+    font-size: 12px;
+    line-height: 18px;
+}
+#songList swiper{
+  height: 100%;
+}

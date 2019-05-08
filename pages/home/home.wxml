@@ -1,0 +1,97 @@
+<!--pages/home/home.wxml  发现-->
+<header>
+</header>
+<view id='home'>
+  <!-- banner轮播的图 -->
+  <view class='top'>
+    <swiper
+      indicator-dots="{{indicatorDots}}"
+      indicator-active-color="{{indicatorActivecolor}}"
+      indicator-color="{{indicatorColor}}"
+      autoplay="{{autoplay}}"
+      interval="{{interval}}"
+      duration="{{duration}}"
+    >
+      <block wx:for="{{imgUrls}}" wx:key="index">
+        <swiper-item>
+          <image src="{{item}}" class="slide-image" width="355" height="150" />
+        </swiper-item>
+      </block>
+    </swiper>
+    <!-- icon图标分类 -->
+    <view class='icon-list-box'>
+      <view class="icon-list" wx:for="{{iconList}}" wx:key="index" bindtap='goPlay'>
+          <view class='icon'>{{ietm.icon}}</view>
+          <text>{{item.text}}</text>
+      </view>
+    </view>
+    <!-- 推荐歌单 和 新歌-->
+    <view class='song-list-box'>
+      <!-- 推荐歌单标题 -->
+      <view class='title'>
+        <text>推荐歌单</text>
+        <view class='song-btn' bindtap='songlist'>歌单广场</view>
+      </view>
+      <!-- 推荐歌单 -->
+      <view class='song-list'>
+        <view class='song' wx:for="{{song}}" wx:key="index" bindtap='goPlay'>
+          <view class='songImg'>
+            <image></image>
+          </view>
+          <text>{{item.text}}</text>
+        </view>
+
+      </view>
+      <!-- 新歌标题 -->
+      <view class='title'>
+          <text>新歌</text>
+        <view class='song-btn' bindtap='moreSong'>更多新歌</view>
+      </view>
+      <!-- 新歌 -->
+      <view class='song-list'>
+        <view class='song' wx:for="{{newSong}}" wx:key="index">
+          <view class='songImg'>
+            <image></image>
+          </view>
+          <view class='songName'>{{item.songName}}</view>
+          <text>{{item.singer}}</text>
+        </view>
+      </view>
+      
+
+    </view>
+  </view>
+  <!-- 云村精选 -->
+  <view class='bottom'>
+    <view class='sift'>
+      <!-- 标题 -->
+        <view class='title'>
+          <text>云村精选</text>
+          <view class='new-btn'>获取新内容</view>
+        </view>
+        <!-- 内容 -->
+        <view class='content' wx:for="{{videoContent}}" wx:key="index">
+            <!-- 视频 -->
+            <view class='videoBox' bindtap='viedeoList'> <video></video> 
+              <!-- 视频名字 -->
+              <view class='videoName'>
+                  <text>{{item.videoName}}</text>
+                  <image class='songImg'></image>
+              </view>
+            </view>
+            <!-- 视频回复和点赞 -->
+            <view class='reply-box'>
+              <view class='dot'>
+                <view>icon</view>
+                <text>{{item.dot}}</text>
+              </view>
+              <view class='reply' bindtap='goTomvPage'>
+                <view>icon</view>
+                <text>{{item.reply}}</text>
+              </view>
+            </view>
+        </view>
+    </view>
+  </view>
+<!-- end -->
+</view>

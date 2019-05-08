@@ -1,0 +1,94 @@
+<!--pages/mvPage/mvPage.wxml-->
+<video id="myVideo" 
+poster="{{ mv.bg }}"
+src="{{ mv.url }}"
+  controls></video>
+<view class='mvMsgBox'>
+  <view class='mvTitle'>
+    <text class='isGood' wx:if="{{ mv.isGood }}">精品</text>
+    <text class='title'>{{ mv.title }}</text>
+    <view class='showMore' bindtap='showMore'></view>
+  </view>
+  <view class='msgBox' style='height:{{ isUp? "auto" : "24px" }};'>
+    <view class='tipsBox'>
+      <text class='plays'>{{ mv.plays }}次观看</text>
+      <text class='tips' wx:for="{{ mv.tips }}" wx:key="index" bindtap='tipClick' data-index='index'>{{ item.name }}</text>
+    </view>
+    <view class='moreMsgBox'>
+      <text class='msg' wx:for="{{ mv.musicMsg }}" wx:key="index">{{ item }}</text>
+    </view>
+  </view>
+</view>
+<view class='iconBox'>
+  <view class='iconItem'>
+    <view class='icon'></view>
+    <text class='txt'>{{ mv.praise }}</text>
+  </view>
+  <view class='iconItem'>
+    <view class='icon'></view>
+    <text class='txt'>{{ mv.collection }}</text>
+  </view>
+  <view class='iconItem'>
+    <view class='icon'></view>
+    <text class='txt'>{{ mv.comment }}</text>
+  </view>
+  <view class='iconItem'>
+    <view class='icon'></view>
+    <text class='txt'>{{ mv.share }}</text>
+  </view>
+</view>
+<view class='userMsgBox {{userFixed? "userFixed" : "" }}' >
+  <view class='imgbox'>
+    <image src="{{ userMsg.img }}"></image>
+    <view class='isVip' wx:if="{{ isVIP }}"></view>
+  </view>
+  <text class='username'>{{ userMsg.username }}</text>
+  <view class='guanBox'>
+    <view class='guanIcon'></view>
+    <text class='guantxt'>关注</text>
+  </view>
+</view>
+<view class='emptyMsgBox' hidden="{{ !userFixed }}" >
+  
+</view>
+<view class='moreMvBox' wx:if="{{moreMV.length != 0}}">
+  <text class='moreTitle'>相关视频</text>
+  <view class='moreMvList'>
+    <view class='moreMvItem' wx:for="{{ moreMV }}" wx:key="index">
+      <image class='mvBg' src='{{ item.bg }}'></image>
+      <view class='rightMsg'>
+        <text class='submvTitle'>{{ item.title }}</text>
+        <view class='authorBox'>
+          <text class='time'>{{ item.time }}</text>
+          <text class='author'>by {{ item.author }}</text>
+        </view>
+
+      </view>
+    </view>
+  </view>
+</view>
+<view class='pingBox'>
+  <text class='moreTitle'>相关视频</text>
+  <view class='noPing' wx:if="{{ pingList.length == 0 }}">快来抢占沙发吧~</view>
+  <view class='pingList' wx:else>
+    <view class='pingListBox' wx:for="{{ pingList }}" wx:key="index">
+      <view class='pingUserBox'>
+        <image class='imgbox' src='{{ item.userImg }}'></image>
+        <view class='rightUserMsg'>
+          <text class='pingUsername'>{{ item.username }}</text>
+          <text class='pingDate'>{{ item.pingDate }}</text>
+        </view>
+        <view class='pingZhanBox'>
+          <text class='pingZhan'>{{ item.praise }}</text>
+          <view class='icon'></view>
+        </view>
+      </view>
+      <view class='pingMsgBox'>{{ item.msg }}</view>
+      <text class='huifu' wx:if="{{ item.huifu  }}" catchtap='goToPingPage'>{{ item.huifu }}条回复</text>
+    </view>
+  </view>
+</view>
+<view class='ingputBox' style="bottom:{{bottom}}px">
+  <input class='inputTxt' placeholder="写评论..." cursor-spacing='10' adjust-position="{{false}}" bindfocus="foucus" bindblur="blur" />
+  <view class='inputBtn'></view>
+</view>

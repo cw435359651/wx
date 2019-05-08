@@ -1,0 +1,43 @@
+<!--pages/mytest/mytest.wxml-->
+<cwHeader id="myheader"
+  bind:clickHeader="clickHeader"
+ />
+
+<swiper
+  bindtransition="aa"
+  bindchange='bb'
+>
+  <block wx:for="{{imgUrls}}" wx:key="index">
+    <swiper-item>
+      <image src="{{item}}" class="slide-image" width="100%" height="100%" />
+    </swiper-item>
+  </block>
+</swiper>
+
+<view class='haeder'>
+  <text class='name'>精品推荐</text>
+  <view class='goToAll' bindtap="goIndex">全部精品</view>
+</view>
+<view class='goodsList'>
+  <view class='goodItem' wx:for="{{ arr }}" wx:key="index">
+    <image class='imgs' src='{{item.img}}'></image>
+    <text class='coverText'>{{ item.name }}</text>
+  </view>
+</view>
+<view class='haeder'>
+  <text class='name'>精品推荐</text>
+  <view class='goToAll' bindtap="goIndex">全部精品</view>
+</view>
+<view class='goodsList2'>
+  <view class='goodItem2' wx:for="{{ arr2 }}" wx:key="index">
+    <image class='imgs' src='{{item.img}}'></image>
+    <view class='titleBox'>
+      <text class='title'>{{ item.title }}</text>
+      <text class='msg'>{{ item.msg }}</text>
+      <image class='userLog' src="{{ item.userLog }}"></image>
+    </view>
+  </view>
+</view>
+<view class='hideLoading' wx:if="{{ hideLoading }}">
+  加载中...
+</view>

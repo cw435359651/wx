@@ -1,0 +1,148 @@
+/* pages/home-moreSong/moreSong.wxss */
+page{
+  padding-top:  35px;
+  box-sizing: border-box;
+}
+view{
+  box-sizing: border-box;
+
+}
+page{
+  height: 100%;
+}
+/* 清楚滚动条 */
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+#moreSong{
+  width: 100%;
+  background: #fff;
+  height: 100%;
+}
+#moreSong swiper{
+  height: 100%;
+}
+.titleBox{
+   width: 100%;
+  /* background: #fff; */
+   overflow-x:auto;
+     position: fixed;
+     background: #fff;
+     z-index: 9;
+     top: 0;
+     left: 0;
+  padding: 0 10px;
+
+}
+.title{
+  width:100%;
+  height: 35px;
+  line-height: 35px;
+  
+  text-align: center;
+}
+
+.title view{
+  width: 20%;
+  float: left;
+  /* padding: 0 27px; */
+  height: 35px;
+  line-height: 35px;
+  text-align: center;
+  font-size: 14px;
+  color: #9A9A9A;
+
+  /* background: pink; */
+}
+#moreSong .title .active{
+  color: red;
+  border-bottom: 1px solid red;
+}
+/* 内容列表 */
+.contentBox{
+  width: 100%;
+background: rgba(0, 128, 0, 0.678);
+height: 100%;
+overflow: hidden;
+
+}
+.contentBox .top{
+  font-size: 12px;
+  color: #fff;
+  width: 85%;
+  margin: auto;
+   margin-top: 60px;
+   letter-spacing: 2px;
+}
+.contentBox .top view{
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 4px;
+}
+.content{
+  width: 100%;
+  margin-top: 14px;
+  height: 500px;
+  background: #fff;
+  border-radius: 18px 18px 0 0;
+  padding:10px;
+}
+.numBox{
+  width: 100%;
+  display: flex;
+  justify-content:left;
+  font-size: 16px;
+  margin-bottom: 16px;
+}
+.numBox .i{
+  height: 30px; 
+  line-height: 30px;
+  margin-right:10px;
+}
+.numBox view{
+   height: 30px; 
+  line-height: 30px;
+}
+.numBox view text{
+  color: #A9A9A9;
+  font-size: 14px;
+}
+image{
+  width: 100%;
+  height: 100%;
+}
+.songBox{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+.songBox .left{
+  display: flex;
+}
+.songBox .songImg{
+  width: 45px;
+  height: 45px;
+  background: pink;
+  margin-right: 10px;
+  border-radius: 4px;
+  overflow: hidden
+}
+.songBox .singer{
+  margin-top: 5px;
+ color: #A9A9A9;
+ font-size: 12px;
+}
+.songBox .i{
+  height: 45px;
+  line-height: 45px;
+  margin-right: 24px;
+}
+.content-song{
+ width: 100%;
+}
+
+

@@ -1,0 +1,30 @@
+<!--pages/home-videoList/videoList.wxml-->
+<view id='videoList'>
+     <view class='content' wx:for="{{videoContent}}" wx:key="index">
+          <!-- 视频 -->
+          <view class='videoBox' bindtap='viedeoList'> <video></video> 
+            <!-- 视频名字 -->
+            <view class='videoName'>
+                <text>{{item.videoName}}</text>
+                <image class='songImg'></image>
+            </view>
+          </view>
+          <!-- 视频回复和点赞 -->
+          <view class='reply-box'>
+              <view class='left'>
+                <image class='uesrImg'></image>
+                <text class='userName'>血小板</text>
+              </view>
+              <view class='right'>
+                  <view class='dot'>
+                    <view>icon</view>
+                    <text>{{item.dot}}</text>
+                  </view>
+                  <view class='reply'>
+                    <view>icon</view>
+                    <text>{{item.reply}}</text>
+                 </view>  
+               </view>
+              </view>
+         </view>
+</view>

@@ -1,0 +1,43 @@
+<!--pages/pingPage/pingPage.wxml-->
+<view class='pinUser'>
+  <view class='pingListBox'>
+    <view class='pingUserBox'>
+      <image class='imgbox' src='{{ pingUser.userImg }}'></image>
+      <view class='rightUserMsg'>
+        <text class='pingUsername'>{{ pingUser.username }}</text>
+        <text class='pingDate'>{{ pingUser.pingDate }}</text>
+      </view>
+      <view class='pingZhanBox'>
+        <text class='pingZhan'>{{ pingUser.praise }}</text>
+        <view class='icon'></view>
+      </view>
+    </view>
+    <view class='pingMsgBox'>{{ pingUser.msg }}</view>
+  </view>
+
+</view>
+
+<view class='pingBox'>
+  <text class='moreTitle'>全部回复</text>
+  <view class='pingList'>
+    <view class='pingListBox' wx:for="{{ pingList }}" wx:key="index">
+      <view class='pingUserBox'>
+        <image class='imgbox' src='{{ item.userImg }}'></image>
+        <view class='rightUserMsg'>
+          <text class='pingUsername'>{{ item.username }}</text>
+          <text class='pingDate'>{{ item.pingDate }}</text>
+        </view>
+        <view class='pingZhanBox'>
+          <text class='pingZhan'>{{ item.praise }}</text>
+          <view class='icon'></view>
+        </view>
+      </view>
+      <view class='pingMsgBox'>{{ item.msg }}</view>
+      <text url='' class='huifu' wx:if="{{ item.huifu  }}">{{ item.huifu }}条回复</text>
+    </view>
+  </view>
+</view>
+<view class='ingputBox' style="bottom:{{bottom}}px">
+  <input class='inputTxt' placeholder="写评论..." cursor-spacing='10' adjust-position="{{false}}" bindfocus="foucus" bindblur="blur" />
+  <view class='inputBtn'></view>
+</view>

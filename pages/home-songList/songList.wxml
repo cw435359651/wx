@@ -1,0 +1,23 @@
+<!--pages/home-songList/songList.wxml-->
+<view id='songList'>  
+  <!-- 标题栏 -->
+  <view class='titleBox'>
+    <view class='title'>
+      <view wx:for='{{titleList}}' wx:key="index"  class="{{oindex == index ? 'active':''}}" >{{item}}</view>
+    </view>
+  
+  </view>
+  <!-- 滑动页面 -->
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" bindchange ="change">
+    <block wx:for="{{contentList}}"  wx:key="index">
+      <swiper-item>
+        <view class='contentBox'>
+          <view class='content' wx:for='{{contentList[index]}}' wx:key="index" bindtap='goPlay'>
+            <image></image>
+            <text>{{item.text}}</text>
+          </view>
+        </view>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
